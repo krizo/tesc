@@ -1,0 +1,25 @@
+<%= simple_form_for @order do |f| %>
+  <%= f.input :name, label: "Nazwa:" %>
+  <%= f.association :building, label: "Budowa:" %>
+  <%= f.input :date, label: "Data złożenia:" %>
+  <% statuses = ['Nowe', 'W trakcie', 'Zrealizowane', 'Anulowane'] %>
+  <%= f.input :status, collection: statuses, label: "Status:"  %>
+  <%= f.input :hot, type: :checkbox, label: "Pilne?" %>
+  <% payments = ['Przelew', 'Gotówka'] %>
+  <%= f.input :payment_type, collection: payments, label: "Płatność"  %>
+  <%= f.input :contract_nr, label: "Nr kontraktu:" %>
+  <%= f.input :contract_details, type: :text, label: "Szczegóły kontraktu:" %>
+  <%= f.input :recipient, type: 'text_field', label: "Odbiorca:" %>
+  <%= f.input :driving_instructions, label: "Instrukcje dla kierowcy:" %>
+  <%= f.input :contact_person, label: "Osoba kontaktowa" %>
+  <%= f.input :sap, label: "SAP:" %>
+  <%= f.input :comment, as: :text, label: "Uwagi:"  %>
+  <%= f.association :requester, label: "Zleceniodawca:" %>
+
+
+  <div class="form-actions">
+    <%= f.button :submit, "Zapisz", :class => 'btn'  %>
+    <%= link_to t('.cancel', :default => "Anuluj"),
+                orders_path, :class => 'btn'  %>
+  </div>
+<% end %>

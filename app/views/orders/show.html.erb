@@ -1,0 +1,53 @@
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
+  <dd><%= @order.comment %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
+  <dd><%= @order.date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @order.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:payment_type) %>:</strong></dt>
+  <dd><%= @order.payment_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contract_nr) %>:</strong></dt>
+  <dd><%= @order.contract_nr %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:contract_details) %>:</strong></dt>
+  <dd><%= @order.contract_details %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:recipient) %>:</strong></dt>
+  <dd><%= @order.recipient %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:driving_instructions) %>:</strong></dt>
+  <dd><%= @order.driving_instructions %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contact_person) %>:</strong></dt>
+  <dd><%= @order.contact_person %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hot) %>:</strong></dt>
+  <dd><%= @order.hot %></dd>
+  </dl>
+  <dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:sap) %>:</strong></dt>
+  <dd><%= @order.sap %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @order.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:building_id) %>:</strong></dt>
+  <dd><%= @order.building_id %></dd>
+  <dt><strong>Dostawy:</strong></dt>
+  <dd> dupa </dd>
+  <dd><%= @deliveries.first.date  %></dd>
+
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              orders_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_order_path(@order), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              order_path(@order),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
