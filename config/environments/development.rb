@@ -34,4 +34,6 @@ Rails.application.configure do
   # config.i18n.available_locales = :pl
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  BetterErrors.use_pry!
+  AwesomePrint.defaults = { plain: true }
 end

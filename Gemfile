@@ -28,9 +28,9 @@ gem 'spring',        group: :development
 
 gem 'therubyracer'
 gem 'less-rails'
-gem "twitter-bootstrap-rails"
+gem 'less-rails-bootstrap'
 gem 'simple_form'
-gem "dynamic_form"  
+gem "dynamic_form"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,5 +42,12 @@ gem "dynamic_form"
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
+gem 'better_errors'
+gem 'annotate'
+gem 'pry'
+gem 'hirb'
+gem 'quiet_assets'
+gem 'awesome_print'
+gem 'binding_of_caller'

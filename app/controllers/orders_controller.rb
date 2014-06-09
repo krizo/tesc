@@ -13,7 +13,10 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order = Order.find(params[:id])
     @deliveries = Delivery.where(order_id:params[:id])
+    @requester = @order.requester
+    @building = @order.building
   end
 
   # GET /orders/new
@@ -66,6 +69,7 @@ class OrdersController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])

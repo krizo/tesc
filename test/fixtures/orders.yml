@@ -1,3 +1,27 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id                   :integer          not null, primary key
+#  comment              :string(255)
+#  date                 :date             default(Thu, 05 Jun 2014)
+#  created_at           :datetime
+#  updated_at           :datetime
+#  user_id              :integer
+#  requester_id         :integer          default(1)
+#  status               :string(255)      default("Nowe")
+#  payment_type         :string(255)      default("Przelew")
+#  contract_nr          :string(255)
+#  contract_details     :text
+#  recipient            :text
+#  driving_instructions :text
+#  contact_person       :text
+#  hot                  :boolean
+#  sap                  :integer
+#  name                 :string(255)
+#  building_id          :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
